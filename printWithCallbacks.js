@@ -7,7 +7,7 @@ function getHTML (options, callback)
     response.setEncoding('utf8');
     response.on('data', function (data) 
     { 
-      printHTML(data);
+      callback(data);
     });
   });
 };
@@ -21,4 +21,4 @@ function printHTML (html) {
     path: '/http-examples/step4.html'
   };
 
-  getHTML(requestOptions, printHTML())
+  getHTML(requestOptions, printHTML)
